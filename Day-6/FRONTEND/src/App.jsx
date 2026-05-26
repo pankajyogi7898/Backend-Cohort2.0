@@ -9,7 +9,7 @@ const App = () => {
   const [editId, setEditId] = useState(null)
 
   function fetchNotes() {
-    axios.get("https://backend-cohort2-0-qbqp.onrender.com/api/notes")
+    axios.get("http://localhost:3000/api/notes")
       .then((res) => {
         setNotes(res.data.note)
       })
@@ -23,7 +23,7 @@ const App = () => {
   function formHandler(e) {
     e.preventDefault()
     if (editId) {
-      axios.patch("https://backend-cohort2-0-qbqp.onrender.com/api/notes/" + editId, {
+      axios.patch("http://localhost:3000/api/notes/" + editId, {
         title, description
       })
         .then((res) => {
@@ -35,7 +35,7 @@ const App = () => {
         })
     }
     else {
-      axios.post("https://backend-cohort2-0-qbqp.onrender.com/api/notes", {
+      axios.post("http://localhost:3000/api/notes", {
         title,
         description
       })
@@ -52,7 +52,7 @@ const App = () => {
   }
 
   function deleteHandler(noteId) {
-    axios.delete("https://backend-cohort2-0-qbqp.onrender.com/api/notes/" + noteId)
+    axios.delete("http://localhost:3000/api/notes/" + noteId)
       .then((res) => {
         console.log(res.data)
         fetchNotes()
