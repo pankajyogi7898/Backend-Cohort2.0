@@ -60,9 +60,9 @@ app.patch("/api/notes/:id", async (req, res) => {
     })
 })
 
-//wild card middleware
-app.use('*name', (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "./public/index.html"))
-})
+// //wild card middleware
+// app.use('*name', (req, res) => {
+//     res.sendFile(path.join(__dirname, "..", "./public/index.html"))
+// })
 
 module.exports = app 
