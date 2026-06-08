@@ -46,7 +46,6 @@ async function userFollowController(req, res) {
 
 }
 
-
 async function userUnfollowController(req, res) {
     const followerUserName = req.user.username
     const followeeUserName = req.params.username
